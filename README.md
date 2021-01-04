@@ -6,7 +6,7 @@
 
 | Column   | Type   | Options     |
 | -------- | ------ | ----------- |
-| name     | string | null: false |
+| nickname | string | null: false |
 | email    | string | null: false |
 | password | string | null: false |
 
@@ -15,6 +15,7 @@
 - has_many :room_users
 - has_many :rooms, through: room_users
 - has_many :messages
+- has_many :bmis
 
 ## rooms テーブル
 
@@ -52,3 +53,10 @@
 
 - belongs_to :room
 - belongs_to :user
+
+## bmis テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| data    | string     |                                |
+| user    | references | null: false, foreign_key: true |
